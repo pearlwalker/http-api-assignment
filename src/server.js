@@ -17,11 +17,6 @@ const urlStruct = {
   notFound: jsonHandler.notFound,
 };
 
-const parseBody = (request, response, handler) => {
-  const body = [];
-
-}
-
 /* Handles different URLs */
 const onRequest = (request, response) => {
   const protocol = request.connection.encrypted ? 'https' : 'http';
