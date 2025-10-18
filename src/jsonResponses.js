@@ -34,11 +34,11 @@ const badRequest = (request, response) => {
 
 const unauthorized = (request, response) => {
     const responseJSON = {
-        message: '',
-        id: '',
+        message: 'Missing loggedIn query parameter set to yes.',
+        id: 'unauthorized',
     };
 
-    respondJSON(request, response, 200, responseJSON);
+    respondJSON(request, response, 401, responseJSON);
 };
 
 const forbidden = (request, response) => {
