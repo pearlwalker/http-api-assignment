@@ -16,8 +16,8 @@ const respondJSON = (request, response, status, object) => {
 
 const success = (request, response) => {
     const responseJSON = {
-        message: '',
-        id: '',
+        message: 'This is a successful response.',
+        id: 'success',
     };
 
     respondJSON(request, response, 200, responseJSON);
