@@ -15,9 +15,6 @@ const getCSS = (request, response) => {
     response.end();
 };
 
-const getBadRequest = (request, response) => {
-};
-
 module.exports = {
     getIndex,
     getCSS
