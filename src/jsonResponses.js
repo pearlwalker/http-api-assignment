@@ -70,11 +70,11 @@ const notImplemented = (request, response) => {
 
 const notFound = (request, response) => {
     const responseJSON = {
-        message: '',
-        id: '',
+        message: 'The page you are looking for was not found.',
+        id: 'notFound',
     };
 
-    respondJSON(request, response, 200, responseJSON);
+    respondJSON(request, response, 404, responseJSON);
 };
 
 module.exports = {
