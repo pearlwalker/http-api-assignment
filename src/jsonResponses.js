@@ -30,9 +30,14 @@ const forbidden = (request, response) => {
 
 };
 
+const internal = (request, response) => {
+
+};
+
 module.exports = {
     success,
     badRequest,
     unauthorized,
     forbidden,
+    internal,
 };
