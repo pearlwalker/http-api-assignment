@@ -26,10 +26,13 @@ const success = (request, response) => {
 const badRequest = (request, response) => {
     const responseJSON = {
         message: 'This request has the required parameters',
-        id: 'badRequest',
     };
 
-    respondJSON(request, response, 400, responseJSON);
+    if (!request.query.valid || request.query.valid !== 'true') {
+        response.id = 'badRequest';
+        return respondJSON(request, response, 400, responseJSON);
+    };
+    return respondJSON(request, response, 200, responseJSON);
 };
 
 const unauthorized = (request, response) => {
