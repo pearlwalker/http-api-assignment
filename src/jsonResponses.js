@@ -26,8 +26,13 @@ const unauthorized = (request, response) => {
 
 };
 
+const forbidden = (request, response) => {
+
+};
+
 module.exports = {
     success,
     badRequest,
     unauthorized,
+    forbidden,
 };
