@@ -6,6 +6,12 @@ const respondJSON = (request, response, status, object) => {
         'Content-Type': 'application/json',
         'Content-Length': Buffer.byteLength(content, 'utf8'),
     });
+    
+    if (request.method !== 'HEAD' && status !== 204) {
+        response.write(content);
+    };
+
+    response.end();
 };
 
 module.exports = {
