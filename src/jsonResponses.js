@@ -22,7 +22,12 @@ const badRequest = (request, response) => {
 
 };
 
+const unauthorized = (request, response) => {
+
+};
+
 module.exports = {
     success,
     badRequest,
+    unauthorized,
 };
