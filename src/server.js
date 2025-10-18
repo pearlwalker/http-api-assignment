@@ -1,11 +1,19 @@
 const http = require('http');
+const query = require('querystring');
 const htmlHandler = require('./htmlResponses.js');
 const jsonHandler = require('./jsonResponses.js');
 
 const port = process.env.PORT || process.env.NODE_PORT || 3000;
 
+const parseBody = (request, response, handler) => {
+  const body = [];
+  
+}
+
 /* Handles different URLs */
 const onRequest = (request, response) => {
+  const protocol = request.connection.encrypted ? 'https' : 'http';
+  const parsedUrl = new Url(request.url, `${protocol}://`)
   // console.log(request.url);
   switch (request.url) {
     case '/':
