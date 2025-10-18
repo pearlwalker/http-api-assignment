@@ -18,6 +18,11 @@ const success = (request, response) => {
 
 };
 
+const badRequest = (request, response) => {
+
+};
+
 module.exports = {
     success,
+    badRequest,
 };
