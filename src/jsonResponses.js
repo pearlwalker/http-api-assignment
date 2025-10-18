@@ -61,11 +61,11 @@ const internal = (request, response) => {
 
 const notImplemented = (request, response) => {
     const responseJSON = {
-        message: '',
-        id: '',
+        message: 'A GET request for this page has not been implemented.',
+        id: 'notImplemented',
     };
 
-    respondJSON(request, response, 200, responseJSON);
+    respondJSON(request, response, 501, responseJSON);
 };
 
 const notFound = (request, response) => {
