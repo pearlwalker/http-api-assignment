@@ -34,10 +34,15 @@ const internal = (request, response) => {
 
 };
 
+const notImplemented = (request, response) => {
+
+};
+
 module.exports = {
     success,
     badRequest,
     unauthorized,
     forbidden,
     internal,
+    notImplemented,
 };
