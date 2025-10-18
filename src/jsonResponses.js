@@ -52,11 +52,11 @@ const forbidden = (request, response) => {
 
 const internal = (request, response) => {
     const responseJSON = {
-        message: '',
-        id: '',
+        message: 'Internal Server Error. Something went wrong.',
+        id: 'internalError',
     };
 
-    respondJSON(request, response, 200, responseJSON);
+    respondJSON(request, response, 500, responseJSON);
 };
 
 const notImplemented = (request, response) => {
