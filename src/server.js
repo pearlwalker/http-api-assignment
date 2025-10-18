@@ -20,7 +20,7 @@ const urlStruct = {
 /* Handles different URLs */
 const onRequest = (request, response) => {
   const protocol = request.connection.encrypted ? 'https' : 'http';
-  const parsedUrl = new Url(request.url, `${protocol}://`)
+  const parsedUrl = new URL(request.url, `${protocol}://${request.headers.host}`);
   // console.log(request.url);
   switch (request.url) {
     case '/':
