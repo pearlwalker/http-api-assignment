@@ -21,18 +21,9 @@ const urlStruct = {
 const onRequest = (request, response) => {
   const protocol = request.connection.encrypted ? 'https' : 'http';
   const parsedUrl = new URL(request.url, `${protocol}://${request.headers.host}`);
-  // console.log(request.url);
-  switch (request.url) {
-    case '/':
-      htmlHandler.getIndex(request, response);
-      break;
-    case '/style.css':
-      htmlHandler.getCSS(request, response);
-      break;
-    default:
-      htmlHandler.getIndex(request, response);
-      break;
-  }
+
+  request.query = Object.fromEntries(parsedUrl.searchParams);
+  
 };
 
 http.createServer(onRequest).listen(port, () => {
