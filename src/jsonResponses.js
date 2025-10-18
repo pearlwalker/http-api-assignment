@@ -43,11 +43,11 @@ const unauthorized = (request, response) => {
 
 const forbidden = (request, response) => {
     const responseJSON = {
-        message: '',
-        id: '',
+        message: 'You do not have access to this content',
+        id: 'forbidden',
     };
 
-    respondJSON(request, response, 200, responseJSON);
+    respondJSON(request, response, 403, responseJSON);
 };
 
 const internal = (request, response) => {
