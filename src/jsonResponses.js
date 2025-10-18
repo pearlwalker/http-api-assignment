@@ -38,6 +38,10 @@ const notImplemented = (request, response) => {
 
 };
 
+const notFound = (request, response) => {
+
+};
+
 module.exports = {
     success,
     badRequest,
@@ -45,4 +49,5 @@ module.exports = {
     forbidden,
     internal,
     notImplemented,
+    notFound,
 };
