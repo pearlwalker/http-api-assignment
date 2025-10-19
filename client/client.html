@@ -6,48 +6,7 @@
   <link rel="stylesheet" type="text/css" href="/style.css">
 
   <script>
-    const handleResponse = (response) => {
-
-      response.text().then((resText) => {
-        const contentType = response.headers.get('Content-Type');
-        const content = document.querySelector('#content');
-        content.innerHTML = '';
-        let parsedResponse;
-        if (contentType === 'application/json') {
-          parsedResponse = JSON.parse(resText);
-        } else if (contentType === 'text/xml') {
-          parsedResponse = new window.DOMParser().parseFromString(resText, 'text/xml');
-        };
-      });
-      switch (response.status) {
-        case 200:
-          break;
-        case 400:
-          break;
-        case 401:
-          break;
-        case 403:
-          break;
-        case 404:
-          break;
-        case 500:
-          break;
-        case 501:
-          break;
-        default:
-          break;
-      };
-    };
-
-    const sendPost = async (nameForm) => {
-
-    };
-
-    const init = () => {
-      const sendButton = document.querySelector('#send');
-      sendButton.addEventListener('click', handleResponse);
-    };
-    window.onload = init;
+ 
   </script>
 </head>
 
