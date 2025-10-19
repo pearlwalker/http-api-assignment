@@ -18,6 +18,12 @@
 
         h1.textContent = contentType;
         p.textContent = resText;
+
+        if (contentType === 'application/json') {
+
+        } else if (contentType === 'text/xml') {
+
+        };
       });
       switch (response.status) {
         case 200:
