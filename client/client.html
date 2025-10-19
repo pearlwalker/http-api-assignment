@@ -13,12 +13,6 @@
         const content = document.querySelector('#content');
         content.innerHTML = '';
 
-        const h1 = document.createElement('h1');
-        const p = document.createElement('p');
-
-        h1.textContent = contentType;
-        p.textContent = resText;
-
         if (contentType === 'application/json') {
 
         } else if (contentType === 'text/xml') {
