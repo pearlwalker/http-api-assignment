@@ -38,7 +38,8 @@
     };
 
     const init = () => {
-
+      const sendButton = document.querySelector('#send');
+      sendButton.addEventListener('click', handleResponse);
     };
     window.onload = init;
   </script>
