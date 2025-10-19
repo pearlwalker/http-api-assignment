@@ -12,6 +12,9 @@
         const contentType = response.headers.get('Content-Type');
         const content = document.querySelector('#content');
         content.innerHTML = '';
+
+        const h1 = document.createElement('h1');
+        const p = document.createElement('p');
       });
       switch (response.status) {
         case 200:
