@@ -7,7 +7,9 @@
 
   <script>
     const handleResponse = async (response) => {
+      const content = document.querySelector('#content');
 
+      const obj = await response.json();
     };
 
     const sendPost = async (nameForm) => {
