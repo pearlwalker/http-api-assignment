@@ -9,6 +9,9 @@
     const handleResponse = (response) => {
       const contentType = response.headers.get('Content-Type');
       const content = document.querySelector('#content');
+      response.text().then((resText) => {
+
+      });
       switch (response.status) {
         case 200:
           break;
