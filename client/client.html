@@ -21,38 +21,39 @@
 </head>
 
 <body>
-  <!--Site header-->
-  <section id="section-header">
-    <h3>Status Code Tests</h3>
-  </section>
-
-  <!--Wrapper for API form element-->
-  <section id="section-form">
-    <!--The form!-->
-    <form id="apiForm">
-      <!--Select input for desired request-->
-      <select id="form-selectRequest">
-        <option value="/success">Success</option>
-        <option value="/badRequest">Bad Request</option>
-        <option value="/unauthorized">Unauthorized</option>
-        <option value="/forbidden">Forbidden</option>
-        <option value="/internal">Internal</option>
-        <option value="/notImplemented">Not Implemented</option>
-        <option value="/notFound">Not Found</option>
-      </select>
-      <!--Select input for data type of return value-->
-      <select id="form-selectType">
-        <option value="application/json">JSON</option>
-        <option value="text/xml">XML</option>
-      </select>
-      <!--Submit Form-->
-      <input type="submit" id="send">Send</input>
-    </form>
-  </section>
-
-  <!--Content wrapper-->
-  <section id="section-content">
-  </section>
+  <div id="page">
+    <!--Site header-->
+    <section id="section-header">
+      <h3>Status Code Tests</h3>
+    </section>
+    <!--Wrapper for API form element-->
+    <section id="section-form">
+      <!--The form!-->
+      <form id="apiForm">
+        <!--Select input for desired request-->
+        <select id="form-selectRequest">
+          <option value="/success">Success</option>
+          <option value="/badRequest">Bad Request</option>
+          <option value="/unauthorized">Unauthorized</option>
+          <option value="/forbidden">Forbidden</option>
+          <option value="/internal">Internal</option>
+          <option value="/notImplemented">Not Implemented</option>
+          <option value="/notFound">Not Found</option>
+        </select>
+        <!--Select input for data type of return value-->
+        <select id="form-selectType">
+          <option value="application/json">JSON</option>
+          <option value="text/xml">XML</option>
+        </select>
+        <!--Submit Form-->
+        <input type="submit" id="send">Send</input>
+      </form>
+    </section>
+    <!--Content wrapper-->
+    <section id="section-content">
+    </section>
+    
+  </div>
 </body>
 
 </html>
