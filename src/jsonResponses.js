@@ -3,7 +3,7 @@
 const respondJSON = (request, response, status, object) => {
     const content = JSON.stringify(object);
     response.writeHead(status, {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json; charset=utf-8',
         'Content-Length': Buffer.byteLength(content, 'utf8'),
     });
 
