@@ -18,6 +18,8 @@
         method: 'GET',
         headers: {'Accept': contentType},
       };
+
+      let response = await fetch(url, options);
     };
 
     const init = () => {
