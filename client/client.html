@@ -16,10 +16,11 @@
 
       const options = {
         method: 'GET',
-        headers: {'Accept': contentType},
+        headers: { 'Accept': contentType },
       };
 
       let response = await fetch(url, options);
+      response.then((res) => { handleResponse(res) });
     };
 
     const init = () => {
