@@ -20,7 +20,7 @@
       };
 
       let response = await fetch(url, options);
-      response.then((res) => { handleResponse(res) });
+      handleResponse(response);
     };
 
     const init = () => {
