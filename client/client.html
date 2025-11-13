@@ -16,6 +16,12 @@
 
     const init = () => {
       const apiForm = document.querySelector('#apiForm');
+
+      const getData = (e) => {
+        e.preventDefault();
+        sendRequest(apiForm);
+        return false;
+      };
     };
 
     window.onload = init;
