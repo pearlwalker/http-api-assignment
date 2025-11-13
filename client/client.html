@@ -14,6 +14,10 @@
       const url = apiForm.querySelector('#form-selectRequest').value;
       const contentType = apiForm.querySelector('#form-selectType').value;
 
+      const options = {
+        method: 'GET',
+        headers: {'Accept': contentType},
+      };
     };
 
     const init = () => {
