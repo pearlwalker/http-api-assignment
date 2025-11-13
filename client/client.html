@@ -21,23 +21,29 @@
 </head>
 
 <body>
-  <section id="top">
+  <section id="section-header">
     <h3>Status Code Tests</h3>
-    <select id="page">
-      <option value="/success">Success</option>
-      <option value="/badRequest">Bad Request</option>
-      <option value="/unauthorized">Unauthorized</option>
-      <option value="/forbidden">Forbidden</option>
-      <option value="/internal">Internal</option>
-      <option value="/notImplemented">Not Implemented</option>
-      <option value="/notFound">Not Found</option>
-    </select>
-    <select id="type">
-      <option value="application/json">JSON</option>
-      <option value="text/xml">XML</option>
-    </select>
-    <button id="send">Send</button>
   </section>
+  <section id="section-form">
+    <form id="apiForm">
+      <select id="form-selectRequest">
+        <option value="/success">Success</option>
+        <option value="/badRequest">Bad Request</option>
+        <option value="/unauthorized">Unauthorized</option>
+        <option value="/forbidden">Forbidden</option>
+        <option value="/internal">Internal</option>
+        <option value="/notImplemented">Not Implemented</option>
+        <option value="/notFound">Not Found</option>
+      </select>
+      <!--Select data type of return value-->
+      <select id="form-selectType">
+        <option value="application/json">JSON</option>
+        <option value="text/xml">XML</option>
+      </select>
+      <input type="submit" id="send">Send</input>
+    </form>
+  </section>
+
   <section id="content">
   </section>
 </body>
