@@ -50,7 +50,7 @@
       <!--The form!-->
       <form id="apiForm">
         <!--Select input for desired request-->
-        <select id="form-selectRequest">
+        <select id="form-selectRequest" aria-label="Select Request Type">
           <option value="/success">Success</option>
           <option value="/badRequest">Bad Request</option>
           <option value="/unauthorized">Unauthorized</option>
@@ -60,12 +60,12 @@
           <option value="/notFound">Not Found</option>
         </select>
         <!--Select input for data type of return value-->
-        <select id="form-selectType">
+        <select id="form-selectType" aria-label="Select Content Type of Request">
           <option value="application/json">JSON</option>
           <option value="text/xml">XML</option>
         </select>
         <!--Submit Form-->
-        <input type="submit" id="send" value="Send"></input>
+        <input type="submit" id="send" value="Send" aria-label="Send"></input>
       </form>
     </section>
     <!--Content wrapper-->
