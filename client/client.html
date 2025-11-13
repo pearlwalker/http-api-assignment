@@ -11,7 +11,7 @@
     };
 
     const sendRequest = async (apiForm) => {
-
+      const url = apiForm.querySelector('#form-selectRequest').value;
     };
 
     const init = () => {
@@ -22,7 +22,7 @@
         sendRequest(apiForm);
         return false;
       };
-      
+
       apiForm.addEventListener('submit', getData);
     };
 
