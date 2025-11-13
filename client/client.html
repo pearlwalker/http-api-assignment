@@ -22,6 +22,8 @@
         sendRequest(apiForm);
         return false;
       };
+      
+      apiForm.addEventListener('submit', getData);
     };
 
     window.onload = init;
