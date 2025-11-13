@@ -9,23 +9,30 @@
     const handleResponse = async (response) => {
       const content = document.querySelector('#section-content');
 
-      switch(response.status) {
+      switch (response.status) {
         case 200:
-          content.innerHTML
+          content.innerHTML = `<h2>Success</h2>`;
           break;
         case 400:
+          content.innerHTML = `<h2>Bad Request</h2>`;
           break;
         case 401:
+          content.innerHTML = `<h2>Unauthorized</h2>`;
           break;
         case 403:
+          content.innerHTML = `<h2>Forbidden</h2>`;
           break;
         case 404:
+          content.innerHTML = `<h2>Resource Not Found</h2>`;
           break;
         case 500:
+          content.innerHTML = `<h2>Internal Server Error</h2>`;
           break;
         case 501:
+          content.innerHTML = `<h2>Not Implemented</h2>`;
           break;
         default:
+          content.innerHTML = `<h2>Resource Not Found</h2>`;
           break;
       };
     };
