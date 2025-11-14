@@ -1,5 +1,5 @@
 const http = require('http');
-const query = require('querystring');
+//const query = require('querystring');
 const htmlHandler = require('./htmlResponses.js');
 const jsonHandler = require('./jsonResponses.js');
 
@@ -32,5 +32,5 @@ const onRequest = (request, response) => {
 };
 
 http.createServer(onRequest).listen(port, () => {
-  console.log(`Listening on 127.0.0.1:${port}`);
+  //console.log(`Listening on 127.0.0.1:${port}`);
 });
