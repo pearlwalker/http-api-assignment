@@ -48,8 +48,8 @@
         headers: { 'Accept': contentType },
       };
 
-      let response = await fetch(url, options);
-      response.then((res) => { handleResponse(res) });
+      const fetchPromise = await fetch(url, options);
+      fetchPromise.then((response) => { handleResponse(response) });
     };
 
     const init = () => {
