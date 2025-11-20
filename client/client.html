@@ -37,6 +37,9 @@
           content.innerHTML = `<h2>Resource Not Found</h2>`;
           break;
       };
+
+      const resObj = await response.json();
+      content.innerHTML += `<p>${resObj.message}</p>`; 
     };
 
     const sendRequest = async (apiForm) => {
@@ -49,7 +52,7 @@
       };
 
       const fetchPromise = await fetch(url, options);
-      
+      handleResponse()
     };
 
     const init = () => {
