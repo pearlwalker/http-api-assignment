@@ -39,6 +39,7 @@
       };
       const resObj = await response.json();
       content.innerHTML += `<p>${resObj.message}</p>`; 
+
     };
 
     const sendRequest = async (apiForm) => {
@@ -52,6 +53,7 @@
 
       const fetchPromise = await fetch(url, options);
       handleResponse(fetchPromise);
+      console.log(options.headers.Accept);
     };
 
     const init = () => {
