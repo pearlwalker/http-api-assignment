@@ -8,9 +8,10 @@
   <link rel="stylesheet" type="text/css" href="/style.css">
 
   <script>
-    const handleResponse = async (response) => {
+    const handleResponse = async (response, dataType) => {
+      console.log(dataType);
       const content = document.querySelector('#section-content');
-
+      
       switch (response.status) {
         case 200:
           content.innerHTML = `<h2>Success</h2>`;
@@ -52,8 +53,8 @@
       };
 
       const fetchPromise = await fetch(url, options);
-      handleResponse(fetchPromise);
-      console.log(options.headers.Accept);
+      const dataType = `${options.headers.Accept}; charset=utf-8`
+      handleResponse(fetchPromise, dataType);
     };
 
     const init = () => {
