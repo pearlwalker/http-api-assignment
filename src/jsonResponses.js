@@ -1,9 +1,9 @@
 /** Content-Type application/json */
 
-const respondJSON = (request, response, status, object, type = 'text/xml') => {
+const respondJSON = (request, response, status, object, type = 'application/json') => {
   let content;
-  if (type == 'text/xml') {
-    content = `<response>`;
+  if (type === 'text/xml') {
+    content = '<response>';
     content = `${content} <message>${object.message}</message>`;
     content = `${content} </response>`;
   } else {
@@ -32,10 +32,10 @@ const badRequest = (request, response) => {
     message: 'This request has the required parameters',
   };
   if (!request.query.valid || request.query.valid !== 'true') {
-    response.message = 'Missing valid query parameter set to true';
-    response.id = 'badRequest';
+    responseJSON.message = 'Missing valid query parameter set to true';
+    responseJSON.id = 'badRequest';
     return respondJSON(request, response, 400, responseJSON);
-  };
+  }
   return respondJSON(request, response, 200, responseJSON);
 };
 
@@ -43,11 +43,11 @@ const unauthorized = (request, response) => {
   const responseJSON = {
     message: 'You have successfully viewed the content',
   };
-  if (!request.query.valid || request.query.valid !== 'true') {
-    response.message = 'Missing loggedIn query parameter set to yes';
-    response.id = 'unauthorized';
+  if (!request.query.loggedIn || request.query.loggedIn !== 'yes') {
+    responseJSON.message = 'Missing loggedIn query parameter set to yes';
+    responseJSON.id = 'unauthorized';
     return respondJSON(request, response, 401, responseJSON);
-  };
+  }
   return respondJSON(request, response, 200, responseJSON);
 };
 
