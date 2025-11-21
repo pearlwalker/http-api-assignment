@@ -6,11 +6,9 @@ const respondJSON = (request, response, status, object, type = 'application/json
     'Content-Type': type,
     'Content-Length': Buffer.byteLength(content, 'utf8'),
   });
-
   if (request.method !== 'HEAD' && status !== 204) {
     response.write(content);
   }
-
   response.end();
 };
 
@@ -19,7 +17,6 @@ const success = (request, response) => {
     message: 'This is a successful response.',
     id: 'success',
   };
-
   respondJSON(request, response, 200, responseJSON);
 };
 
@@ -27,7 +24,6 @@ const badRequest = (request, response) => {
   const responseJSON = {
     message: 'This request has the required parameters',
   };
-
   if (!request.query.valid || request.query.valid !== 'true') {
     response.message = 'Missing valid query parameter set to true';
     response.id = 'badRequest';
@@ -40,7 +36,6 @@ const unauthorized = (request, response) => {
   const responseJSON = {
     message: 'You have successfully viewed the content',
   };
-
   if (!request.query.valid || request.query.valid !== 'true') {
     response.message = 'Missing loggedIn query parameter set to yes';
     response.id = 'unauthorized';
@@ -54,7 +49,6 @@ const forbidden = (request, response) => {
     message: 'You do not have access to this content',
     id: 'forbidden',
   };
-
   respondJSON(request, response, 403, responseJSON);
 };
 
@@ -63,7 +57,6 @@ const internal = (request, response) => {
     message: 'Internal Server Error. Something went wrong.',
     id: 'internalError',
   };
-
   respondJSON(request, response, 500, responseJSON);
 };
 
@@ -72,7 +65,6 @@ const notImplemented = (request, response) => {
     message: 'A GET request for this page has not been implemented.',
     id: 'notImplemented',
   };
-
   respondJSON(request, response, 501, responseJSON);
 };
 
@@ -81,7 +73,6 @@ const notFound = (request, response) => {
     message: 'The page you are looking for was not found.',
     id: 'notFound',
   };
-
   respondJSON(request, response, 404, responseJSON);
 };
 
