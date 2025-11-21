@@ -1,6 +1,6 @@
 /** Content-Type application/json */
 
-const respondJSON = (request, response, status, object, type='application/json; charset=utf-8') => {
+const respondJSON = (request, response, status, object, type = 'application/json; charset=utf-8') => {
   const content = JSON.stringify(object);
   response.writeHead(status, {
     'Content-Type': type,
@@ -32,7 +32,7 @@ const badRequest = (request, response) => {
     response.message = 'Missing valid query parameter set to true';
     response.id = 'badRequest';
     return respondJSON(request, response, 400, responseJSON);
-  }
+  };
   return respondJSON(request, response, 200, responseJSON);
 };
 
@@ -45,7 +45,7 @@ const unauthorized = (request, response) => {
     response.message = 'Missing loggedIn query parameter set to yes';
     response.id = 'unauthorized';
     return respondJSON(request, response, 401, responseJSON);
-  }
+  };
   return respondJSON(request, response, 200, responseJSON);
 };
 
