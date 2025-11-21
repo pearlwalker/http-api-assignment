@@ -4,8 +4,8 @@ const respondJSON = (request, response, status, object) => {
   let content;
   if (request.contentType === 'text/xml') {
     content = '<response>';
-    content = `${content} <message>${object.message}</message>`;
-    content = `${content} </response>`;
+    content = `${content}<message>${object.message}</message>`;
+    content = `${content}</response>`;
   } else {
     request.contentType = 'application/json';
     content = JSON.stringify(object);
