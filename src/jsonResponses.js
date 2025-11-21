@@ -1,7 +1,15 @@
 /** Content-Type application/json */
 
 const respondJSON = (request, response, status, object, type = 'application/json; charset=utf-8') => {
-  const content = JSON.stringify(object);
+  let content;
+  if (type == 'text/xml') {
+    content = `<response>`;
+    content = `${content} <message>${object.message}</message>`;
+    content = `${content} <id>${object.id}</id>`;
+    content = `${content} </response>`;
+  } else {
+    content = JSON.stringify(object)
+  }
   response.writeHead(status, {
     'Content-Type': type,
     'Content-Length': Buffer.byteLength(content, 'utf8'),
