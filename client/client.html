@@ -38,7 +38,7 @@
           break;
       };
       if (dataType === 'text/xml; charset=utf-8') {
-        console.log(dataType);
+        const resObj = new window.DOMParser().parseFromString()
       } else {
         const resObj = await response.json();
         content.innerHTML += `<p>${resObj.message}</p>`;
