@@ -1,16 +1,18 @@
 /** Content-Type application/json */
 
-const respondJSON = (request, response, status, object, type = 'application/json') => {
+const respondJSON = (request, response, status, object) => {
   let content;
-  if (type === 'text/xml') {
+  console.log(request.contentType);
+  if (request.contentType === 'text/xml') {
     content = '<response>';
     content = `${content} <message>${object.message}</message>`;
     content = `${content} </response>`;
   } else {
+    request.contentType = 'application/json';
     content = JSON.stringify(object);
   }
   response.writeHead(status, {
-    'Content-Type': type,
+    'Content-Type': request.contentType,
     'Content-Length': Buffer.byteLength(content, 'utf8'),
   });
   if (request.method !== 'HEAD' && status !== 204) {
