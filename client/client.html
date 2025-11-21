@@ -10,7 +10,7 @@
   <script>
     const handleResponse = async (response, dataType) => {
       const content = document.querySelector('#section-content');
-
+      console.log(dataType);
       switch (response.status) {
         case 200:
           content.innerHTML = `<h2>Success</h2>`;
@@ -37,8 +37,9 @@
           content.innerHTML = `<h2>Resource Not Found</h2>`;
           break;
       };
-      if (dataType === 'text/xml; charset=utf-8') {
+      if (dataType === 'text/xml') {
         //const resObj = new window.DOMParser().parseFromString()
+        
       } else {
         const resObj = await response.json();
         content.innerHTML += `<p>${resObj.message}</p>`;
@@ -56,8 +57,8 @@
       };
 
       const fetchPromise = await fetch(url, options);
-      const dataType = `${options.headers.Accept}; charset=utf-8`
-      handleResponse(fetchPromise, dataType);
+      console.log(contentType);
+      handleResponse(fetchPromise, contentType);
     };
 
     const init = () => {
