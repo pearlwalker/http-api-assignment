@@ -10,7 +10,6 @@
   <script>
     const handleResponse = async (response, dataType) => {
       const content = document.querySelector('#section-content');
-      console.log(dataType);
       switch (response.status) {
         case 200:
           content.innerHTML = `<h2>Success</h2>`;
@@ -57,7 +56,6 @@
       };
 
       const fetchPromise = await fetch(url, options);
-      console.log(contentType);
       handleResponse(fetchPromise, contentType);
     };
 
