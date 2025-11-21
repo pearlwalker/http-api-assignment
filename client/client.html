@@ -38,8 +38,8 @@
           break;
       };
       if (dataType === 'text/xml') {
-        //const resObj = new window.DOMParser().parseFromString()
-        
+        const resObj = await response.text()
+        content.innerHTML += resObj
       } else {
         const resObj = await response.json();
         content.innerHTML += `<p>${resObj.message}</p>`;
