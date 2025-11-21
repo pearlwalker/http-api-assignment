@@ -5,7 +5,6 @@ const respondJSON = (request, response, status, object, type = 'text/xml') => {
   if (type == 'text/xml') {
     content = `<response>`;
     content = `${content} <message>${object.message}</message>`;
-    content = `${content} <id>${object.id}</id>`;
     content = `${content} </response>`;
   } else {
     content = JSON.stringify(object);
