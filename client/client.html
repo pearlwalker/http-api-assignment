@@ -11,7 +11,7 @@
     const handleResponse = async (response, dataType) => {
       console.log(dataType);
       const content = document.querySelector('#section-content');
-      
+
       switch (response.status) {
         case 200:
           content.innerHTML = `<h2>Success</h2>`;
@@ -38,8 +38,12 @@
           content.innerHTML = `<h2>Resource Not Found</h2>`;
           break;
       };
-      const resObj = await response.json();
-      content.innerHTML += `<p>${resObj.message}</p>`; 
+      if (dataType === 'text/xml; charset=utf-8') {
+        console.log(dataType);
+      } else {
+        const resObj = await response.json();
+        content.innerHTML += `<p>${resObj.message}</p>`;
+      };
 
     };
 
