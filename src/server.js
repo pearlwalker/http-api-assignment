@@ -22,7 +22,7 @@ const onRequest = (request, response) => {
   const parsedUrl = new URL(request.url, `${protocol}://${request.headers.host}`);
 
   request.query = Object.fromEntries(parsedUrl.searchParams);
-
+  request.contentType = request.headers.accept;
   if (urlStruct[parsedUrl.pathname]) {
     urlStruct[parsedUrl.pathname](request, response);
   } else {
